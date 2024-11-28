@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Blog</h3>
+    <% for( let index=0; index < allBlogs.length; index++ ) { %>
+        
+        <img src="<%= allBlogs[index].coverImage %>" alt="Image">
+        <h4>
+            <%= allBlogs[index].title %>
+        </h4 <p>
+        <%= allBlogs[index].content %>
+            </p>
+            <a href='/edit/<%= allBlogs[index]._id %>'>Edit</a><br>
+            <form action="/delete/<%= allBlogs[index]._id %>" method="POST" style="display: inline;">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Delete</button>
+            </form>
+
+            <% } %>
+
+</body>
+
+</html>

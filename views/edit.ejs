@@ -1,0 +1,10 @@
+<p>
+    <%= post._id %>
+</p>
+
+<form action="/edit/<%= post._id %>" method="post">
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="text" name="title" value="<%= post.title %>" placeholder="title" required> <br>
+    <textarea name="content" placeholder="content" required id=""></textarea> <br>
+    <button type="submit">Submit</button>
+</form>
